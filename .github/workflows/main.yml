@@ -33,3 +33,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test programm
       run: python3 helloworld.py
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag python_hello_world:$(date +%s)
